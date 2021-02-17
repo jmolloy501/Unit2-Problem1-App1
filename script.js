@@ -1,12 +1,15 @@
-require(["esri/Map", "esri/views/MapView"], function(Map, MapView) {
-        var map = new Map({
-          basemap: "dark-gray"
+require(["esri/views/MapView", "esri/WebMap"], function(MapView, WebMap) {
+        
+        var webmap = new WebMap({
+          portalItem: {
+            // autocasts as new PortalItem()
+            id: "58f20c17b62d474b87781ea7513ebc53"
+          }
         });
-
+        
+  
         var view = new MapView({
-          container: "viewDiv",
-          map: map,
-          zoom: 10,
-          center: [-89.85, 38.85] // longitude, latitude
+          map: webmap,
+          container: "viewDiv"
         });
       });
